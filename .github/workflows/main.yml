@@ -25,28 +25,11 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
-      - name: Build and push arm64 image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          platforms: linux/arm64
-          file: utils/docker/Dockerfile-arm64
-          push: true
-          tags: ultralytics/yolov5:latest-arm64
-
-      - name: Build and push CPU image
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: utils/docker/Dockerfile-cpu
-          push: true
-          tags: ultralytics/yolov5:latest-cpu
-
       - name: Build and push GPU image
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: utils/docker/Dockerfile
+          file: Dockerfile
           push: true
-          tags: ultralytics/yolov5:latest
+          tags: alijawad07/yolov6:latest
 
