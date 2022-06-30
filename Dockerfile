@@ -27,7 +27,7 @@ WORKDIR /usr/src/app
 
 # Copy contents
 COPY . /usr/src/app
-RUN git clone https://github.com/alijawad07/yolov6 /usr/src/yolov6
+RUN git clone https://github.com/alijawad07/YOLOv6 /usr/src/yolov6
 
 # Set environment variables
 ENV OMP_NUM_THREADS=8
