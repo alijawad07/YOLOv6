@@ -31,5 +31,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: alijawad07/yolov6:latest
+          tags: alijawad07/YOLOv6:latest
 
