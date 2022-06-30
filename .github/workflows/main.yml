@@ -6,7 +6,7 @@ on:
 
 jobs:
   docker:
-    if: github.repository == 'alijawad07/yolov6'
+    if: github.repository == 'alijawad07/YOLOv6'
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
