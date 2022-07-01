@@ -12,14 +12,17 @@ RUN rm -rf /opt/pytorch  # remove 1.2GB dir
 # Install linux packages
 RUN apt update && apt install --no-install-recommends -y zip htop screen libgl1-mesa-glx
 
+# Install python 3.8
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y \
+    python3.8 python3-pip python3.8-dev
+
+
 # Install pip packages
-COPY requirements.txt .
-RUN python -m pip install --upgrade pip
-RUN pip uninstall -y torch torchvision torchtext Pillow
-RUN pip install --no-cache -r requirements.txt \ 
-    'Pillow>=9.1.0' \
-    'opencv-python<4.6.0.66' \
-    --extra-index-url https://download.pytorch.org/whl/cu113
+COPY requirements.txt /opt/app/requirements.txt
+WORKDIR /opt/app
+RUN pip install -r requirements.txt
+COPY . /opt/app
 
 # Create working directory
 RUN mkdir -p /usr/src/app
