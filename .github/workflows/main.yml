@@ -29,5 +29,5 @@ jobs:
           context: .
           file: Dockerfile
           push: true
-          tags: alijnaqvi07/yolov6_new:latest
+          tags: alijnaqvi07/yolov6_new2:latest
 
