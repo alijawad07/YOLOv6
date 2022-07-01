@@ -12,10 +12,6 @@ RUN rm -rf /opt/pytorch  # remove 1.2GB dir
 # Install linux packages
 RUN apt update && apt install --no-install-recommends -y zip htop screen libgl1-mesa-glx
 
-# Install python 3.6
-RUN apt-get install -y build-essential python3.6 python3-pip python3.6-venv
-
-
 # Install pip packages
 COPY requirements.txt /opt/app/requirements.txt
 WORKDIR /opt/app
